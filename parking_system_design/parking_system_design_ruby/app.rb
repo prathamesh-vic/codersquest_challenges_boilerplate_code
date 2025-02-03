@@ -1,6 +1,4 @@
 require 'sinatra'
-require './parking_lot'
-require 'debug'
 
 # https://github.com/sinatra/sinatra?tab=readme-ov-file#available-settings
 # for preventing "attack prevented by Rack::Protection::HostAuthorization" error
