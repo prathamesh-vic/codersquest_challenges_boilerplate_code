@@ -13,8 +13,9 @@ get '/test_setup' do
   { status: "success" }.to_json
 end
 
-# curl --location --request POST 'localhost:4567/example_post_endpoint/12?foo=bar'
-# below is an example of how to define a POST endpoint with path and query params
+# Example POST endpoint
+# curl --location --request POST 'localhost:4567/example_post_endpoint/12?foo=bar' --header 'Content-Type: application/json' --data-raw '{ "message": "Hello World!" }'
+# below is an example of how to define a POST endpoint and read path params (id), query params (foo) and request body
 post '/example_post_endpoint/:id' do
   # query params can be read like this
   foo = @params['foo']
