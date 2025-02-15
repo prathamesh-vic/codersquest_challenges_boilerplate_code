@@ -7,6 +7,7 @@ import java.util.Map;
 public class App {
     public static void main(String[] args) {
         Javalin app = Javalin.create(config -> {
+            config.plugins.enableDevLogging();
             config.requestLogger.http((ctx, ms) -> {
                 System.out.printf(
                     "Request: %s %s - Response: %d (%.2fms)%n", 
@@ -21,6 +22,7 @@ public class App {
         // Code below is for testing the setup of the server, do not modify or else the first test
         // might fail.
         app.get("/test_setup", ctx -> {
+          System.out.println("Test setup endpoint called");
           ctx.json(Map.of("status", "success"));
         });
 
